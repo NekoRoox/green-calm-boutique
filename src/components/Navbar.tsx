@@ -1,5 +1,6 @@
-import { ShoppingBag, Menu, X, Leaf } from "lucide-react";
+import { ShoppingBag, Menu, X } from "lucide-react";
 import { useState } from "react";
+import logo from "@/assets/logo.jpg";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -7,9 +8,8 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-card/90 backdrop-blur-md border-b border-border">
       <div className="container mx-auto flex items-center justify-between h-16 px-4 lg:px-8">
-        <a href="#" className="flex items-center gap-2 font-display text-xl font-semibold text-foreground">
-          <Leaf className="h-5 w-5 text-primary" />
-          L'échappée verte
+        <a href="#" className="flex items-center">
+          <img src={logo} alt="L'échappée verte" className="h-10" />
         </a>
 
         {/* Desktop nav */}
