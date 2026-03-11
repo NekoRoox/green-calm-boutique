@@ -1,6 +1,6 @@
 import { ShoppingBag, Menu, X } from "lucide-react";
 import { useState } from "react";
-import logo from "@/assets/logo.jpg";
+import logo from "@/assets/logo.png";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
