@@ -38,12 +38,12 @@ const categories: Category[] = [
     name: "Fleurs",
     slug: "fleurs",
     products: [
-      { name: "Amnesia CBD", price: "12,90 €", image: catFleurs },
+      { name: "Amnésia Molécule", price: "10 €/g", prices: [{ label: "1g", price: "10 €" }, { label: "5g", price: "35 €" }, { label: "10g", price: "55 €" }], image: productAmnesia },
+      { name: "White Widow", price: "10 €/g", prices: [{ label: "1g", price: "10 €" }, { label: "5g", price: "35 €" }, { label: "10g", price: "55 €" }], image: productWhiteWidow },
       { name: "Lemon Haze", price: "11,90 €", image: productFlower },
       { name: "OG Kush CBD", price: "13,50 €", image: catFleurs },
       { name: "Strawberry", price: "14,90 €", image: productFlower },
       { name: "Purple Haze", price: "15,90 €", image: catFleurs },
-      { name: "White Widow", price: "12,50 €", image: productFlower },
     ],
   },
   {
