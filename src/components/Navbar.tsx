@@ -21,14 +21,14 @@ const Navbar = () => {
 
         {/* Desktop nav */}
         <ul className="hidden md:flex items-center gap-8 font-body text-sm tracking-wide">
-          {["Produits", "Cosmétiques", "Notre histoire"].map((item) => (
-            <li key={item}>
-              <a
-                href="#"
+          {navItems.map((item) => (
+            <li key={item.label}>
+              <Link
+                to={item.href}
                 className="text-muted-foreground hover:text-foreground transition-colors duration-200"
               >
-                {item}
-              </a>
+                {item.label}
+              </Link>
             </li>
           ))}
         </ul>
