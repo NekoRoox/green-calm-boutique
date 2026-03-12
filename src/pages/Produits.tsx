@@ -23,6 +23,7 @@ import productWhiteWidow from "@/assets/product-whitewidow.jpg";
 interface Product {
   name: string;
   price: string;
+  prices?: { label: string; price: string }[];
   image: string;
 }
 
