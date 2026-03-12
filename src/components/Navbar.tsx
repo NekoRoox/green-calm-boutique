@@ -51,15 +51,15 @@ const Navbar = () => {
       {mobileOpen && (
         <div className="md:hidden bg-card border-b border-border">
           <ul className="flex flex-col items-center gap-4 py-6 font-body text-sm">
-            {["Produits", "Cosmétiques", "Notre histoire"].map((item) => (
-              <li key={item}>
-                <a
-                  href="#"
+            {navItems.map((item) => (
+              <li key={item.label}>
+                <Link
+                  to={item.href}
                   className="text-muted-foreground hover:text-foreground transition-colors"
                   onClick={() => setMobileOpen(false)}
                 >
-                  {item}
-                </a>
+                  {item.label}
+                </Link>
               </li>
             ))}
           </ul>
