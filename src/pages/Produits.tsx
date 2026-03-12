@@ -17,6 +17,8 @@ import productFlower from "@/assets/product-flower.jpg";
 import productCream from "@/assets/product-cream.jpg";
 import productOil from "@/assets/product-oil.jpg";
 import productInfusion from "@/assets/product-infusion.jpg";
+import productAmnesia from "@/assets/product-amnesia.jpg";
+import productWhiteWidow from "@/assets/product-whitewidow.jpg";
 
 interface Product {
   name: string;
