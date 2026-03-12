@@ -188,17 +188,27 @@ const CategoryRow = ({ category }: { category: Category }) => {
               <h3 className="font-display text-sm font-medium text-card-foreground truncate">
                 {product.name}
               </h3>
-              <div className="flex items-center justify-between mt-2">
-                <span className="font-body text-sm font-semibold text-foreground">
-                  {product.price}
-                </span>
-                <button
-                  onClick={() => handleAddToCart(product.name)}
-                  className="px-3 py-1.5 bg-primary text-primary-foreground font-body text-xs font-medium tracking-wide rounded-sm hover:bg-primary/90 transition-colors duration-200"
-                >
-                  Ajouter
-                </button>
-              </div>
+              {product.prices ? (
+                <div className="flex flex-wrap gap-1.5 mt-2">
+                  {product.prices.map((p) => (
+                    <span key={p.label} className="font-body text-[10px] bg-secondary text-foreground px-1.5 py-0.5 rounded-sm">
+                      {p.label} — {p.price}
+                    </span>
+                  ))}
+                </div>
+              ) : (
+                <div className="flex items-center justify-between mt-2">
+                  <span className="font-body text-sm font-semibold text-foreground">
+                    {product.price}
+                  </span>
+                </div>
+              )}
+              <button
+                onClick={() => handleAddToCart(product.name)}
+                className="w-full mt-2 px-3 py-1.5 bg-primary text-primary-foreground font-body text-xs font-medium tracking-wide rounded-sm hover:bg-primary/90 transition-colors duration-200"
+              >
+                Ajouter
+              </button>
             </div>
           </div>
         ))}
