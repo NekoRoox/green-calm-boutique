@@ -17,10 +17,13 @@ import productFlower from "@/assets/product-flower.jpg";
 import productCream from "@/assets/product-cream.jpg";
 import productOil from "@/assets/product-oil.jpg";
 import productInfusion from "@/assets/product-infusion.jpg";
+import productAmnesia from "@/assets/product-amnesia.jpg";
+import productWhiteWidow from "@/assets/product-whitewidow.jpg";
 
 interface Product {
   name: string;
   price: string;
+  prices?: { label: string; price: string }[];
   image: string;
 }
 
@@ -35,12 +38,12 @@ const categories: Category[] = [
     name: "Fleurs",
     slug: "fleurs",
     products: [
-      { name: "Amnesia CBD", price: "12,90 €", image: catFleurs },
+      { name: "Amnésia Molécule", price: "10 €/g", prices: [{ label: "1g", price: "10 €" }, { label: "5g", price: "35 €" }, { label: "10g", price: "55 €" }], image: productAmnesia },
+      { name: "White Widow", price: "10 €/g", prices: [{ label: "1g", price: "10 €" }, { label: "5g", price: "35 €" }, { label: "10g", price: "55 €" }], image: productWhiteWidow },
       { name: "Lemon Haze", price: "11,90 €", image: productFlower },
       { name: "OG Kush CBD", price: "13,50 €", image: catFleurs },
       { name: "Strawberry", price: "14,90 €", image: productFlower },
       { name: "Purple Haze", price: "15,90 €", image: catFleurs },
-      { name: "White Widow", price: "12,50 €", image: productFlower },
     ],
   },
   {
@@ -185,17 +188,27 @@ const CategoryRow = ({ category }: { category: Category }) => {
               <h3 className="font-display text-sm font-medium text-card-foreground truncate">
                 {product.name}
               </h3>
-              <div className="flex items-center justify-between mt-2">
-                <span className="font-body text-sm font-semibold text-foreground">
-                  {product.price}
-                </span>
-                <button
-                  onClick={() => handleAddToCart(product.name)}
-                  className="px-3 py-1.5 bg-primary text-primary-foreground font-body text-xs font-medium tracking-wide rounded-sm hover:bg-primary/90 transition-colors duration-200"
-                >
-                  Ajouter
-                </button>
-              </div>
+              {product.prices ? (
+                <div className="flex flex-wrap gap-1.5 mt-2">
+                  {product.prices.map((p) => (
+                    <span key={p.label} className="font-body text-[10px] bg-secondary text-foreground px-1.5 py-0.5 rounded-sm">
+                      {p.label} — {p.price}
+                    </span>
+                  ))}
+                </div>
+              ) : (
+                <div className="flex items-center justify-between mt-2">
+                  <span className="font-body text-sm font-semibold text-foreground">
+                    {product.price}
+                  </span>
+                </div>
+              )}
+              <button
+                onClick={() => handleAddToCart(product.name)}
+                className="w-full mt-2 px-3 py-1.5 bg-primary text-primary-foreground font-body text-xs font-medium tracking-wide rounded-sm hover:bg-primary/90 transition-colors duration-200"
+              >
+                Ajouter
+              </button>
             </div>
           </div>
         ))}
