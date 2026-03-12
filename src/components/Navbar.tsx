@@ -1,6 +1,13 @@
 import { ShoppingBag, Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
+
+const navItems = [
+  { label: "Produits", href: "/produits" },
+  { label: "Cosmétiques", href: "/produits/cosmetiques" },
+  { label: "Notre histoire", href: "#" },
+];
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
