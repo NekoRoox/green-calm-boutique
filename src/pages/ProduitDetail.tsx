@@ -7,16 +7,17 @@ import { toast } from "sonner";
 import { categories } from "@/data/products";
 import { Slider } from "@/components/ui/slider";
 
-/** Calculate degressive price for flowers:
- *  1-4g → 10 €/g
- *  5-9g → 7 €/g (equivalent to 35€ for 5g)
- *  10+g → 5.5 €/g (equivalent to 55€ for 10g)
+/** Prix dégressifs fleurs :
+ *  10g = 55 €, 5g = 35 €, sinon 10 €/g
+ *  On maximise les packs 10g, puis 5g, reste à 10€/g
  */
 const calculateFlowerPrice = (grams: number): number => {
   if (grams <= 0) return 0;
-  if (grams < 5) return grams * 10;
-  if (grams < 10) return 35 + (grams - 5) * 4;
-  return 55 + (grams - 10) * 4;
+  const packs10 = Math.floor(grams / 10);
+  const remaining = grams % 10;
+  const packs5 = remaining === 5 ? 1 : 0;
+  const loose = packs5 ? 0 : remaining;
+  return packs10 * 55 + packs5 * 35 + loose * 10;
 };
 
 const formatPrice = (price: number): string => {
