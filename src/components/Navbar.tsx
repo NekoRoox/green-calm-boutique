@@ -6,6 +6,7 @@ import logo from "@/assets/logo.png";
 const navItems = [
   { label: "Accueil", href: "/" },
   { label: "Produits", href: "/produits" },
+  { label: "Nous contacter", href: "/contact" },
 ];
 
 const Navbar = () => {
