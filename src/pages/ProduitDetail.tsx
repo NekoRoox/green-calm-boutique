@@ -13,11 +13,11 @@ import { Slider } from "@/components/ui/slider";
  */
 const calculateFlowerPrice = (grams: number): number => {
   if (grams <= 0) return 0;
+  // Dégressif uniquement sur multiples exacts de 5
+  if (grams % 5 !== 0) return grams * 10;
   const packs10 = Math.floor(grams / 10);
-  const remaining = grams % 10;
-  const packs5 = remaining === 5 ? 1 : 0;
-  const loose = packs5 ? 0 : remaining;
-  return packs10 * 55 + packs5 * 35 + loose * 10;
+  const packs5 = (grams % 10) === 5 ? 1 : 0;
+  return packs10 * 55 + packs5 * 35;
 };
 
 const formatPrice = (price: number): string => {
