@@ -4,9 +4,8 @@ import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
 const navItems = [
+  { label: "Accueil", href: "/" },
   { label: "Produits", href: "/produits" },
-  { label: "Cosmétiques", href: "/produits/cosmetiques" },
-  { label: "Notre histoire", href: "#" },
 ];
 
 const Navbar = () => {
