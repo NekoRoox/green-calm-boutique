@@ -3,17 +3,13 @@ import { useState } from "react";
 import { ArrowLeft, Minus, Plus } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { toast } from "sonner";
 import { categories } from "@/data/products";
 import { Slider } from "@/components/ui/slider";
+import { useCart } from "@/contexts/CartContext";
+import { toast } from "sonner";
 
-/** Prix dégressifs fleurs :
- *  10g = 55 €, 5g = 35 €, sinon 10 €/g
- *  On maximise les packs 10g, puis 5g, reste à 10€/g
- */
 const calculateFlowerPrice = (grams: number): number => {
   if (grams <= 0) return 0;
-  // Dégressif uniquement sur multiples exacts de 5
   if (grams % 5 !== 0) return grams * 10;
   const packs10 = Math.floor(grams / 10);
   const packs5 = (grams % 10) === 5 ? 1 : 0;
@@ -24,9 +20,16 @@ const formatPrice = (price: number): string => {
   return price.toFixed(2).replace(".", ",") + " €";
 };
 
+const parsePrice = (priceStr: string): number => {
+  const match = priceStr.match(/([\d,]+)\s*€/);
+  if (!match) return 0;
+  return parseFloat(match[1].replace(",", "."));
+};
+
 const ProduitDetail = () => {
   const { categorySlug, productIndex } = useParams();
   const idx = Number(productIndex);
+  const { addItem } = useCart();
 
   const category = categories.find((c) => c.slug === categorySlug);
   const product = category?.products[idx];
@@ -50,18 +53,25 @@ const ProduitDetail = () => {
     );
   }
 
-  const totalPrice = isFlower ? calculateFlowerPrice(grams) : 0;
-  const pricePerGram = grams > 0 ? totalPrice / grams : 0;
+  const totalPrice = isFlower ? calculateFlowerPrice(grams) : parsePrice(product.price);
+  const pricePerGram = grams > 0 ? (isFlower ? totalPrice / grams : 0) : 0;
 
   const handleAddToCart = () => {
-    const label = isFlower
-      ? `${product.name} (${grams}g)`
-      : product.name;
-    const priceLabel = isFlower ? formatPrice(totalPrice) : product.price;
-    toast.success(`${label} ajouté au panier — ${priceLabel}`, {
-      description: "Continuez vos achats ou finalisez votre commande.",
-      duration: 3000,
+    const itemId = isFlower
+      ? `${categorySlug}-${idx}-${grams}g`
+      : `${categorySlug}-${idx}`;
+
+    addItem({
+      id: itemId,
+      name: isFlower ? `${product.name} (${grams}g)` : product.name,
+      categorySlug: categorySlug!,
+      productIndex: idx,
+      image: product.image,
+      price: totalPrice,
+      grams: isFlower ? grams : undefined,
     });
+
+    toast.success("Ajouté au panier !", { duration: 2000 });
   };
 
   return (
@@ -81,11 +91,7 @@ const ProduitDetail = () => {
         <section className="container mx-auto px-4 pb-16">
           <div className="grid md:grid-cols-2 gap-8 lg:gap-16 max-w-5xl mx-auto">
             <div className="aspect-square overflow-hidden rounded-sm bg-secondary">
-              <img
-                src={product.image}
-                alt={product.name}
-                className="w-full h-full object-cover"
-              />
+              <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
             </div>
 
             <div className="flex flex-col justify-center">
@@ -98,16 +104,12 @@ const ProduitDetail = () => {
 
               {isFlower ? (
                 <div className="mb-6">
-                  <p className="font-body text-sm text-muted-foreground mb-4">
-                    Choisissez votre quantité :
-                  </p>
+                  <p className="font-body text-sm text-muted-foreground mb-4">Choisissez votre quantité :</p>
 
-                  {/* Gram selector with +/- buttons */}
                   <div className="flex items-center gap-4 mb-4">
                     <button
                       onClick={() => setGrams(Math.max(1, grams - 1))}
                       className="p-2 rounded-sm border border-border bg-card text-foreground hover:border-primary transition-colors"
-                      aria-label="Diminuer"
                     >
                       <Minus className="h-4 w-4" />
                     </button>
@@ -117,54 +119,34 @@ const ProduitDetail = () => {
                     <button
                       onClick={() => setGrams(Math.min(50, grams + 1))}
                       className="p-2 rounded-sm border border-border bg-card text-foreground hover:border-primary transition-colors"
-                      aria-label="Augmenter"
                     >
                       <Plus className="h-4 w-4" />
                     </button>
                   </div>
 
-                  {/* Slider */}
                   <div className="mb-6">
-                    <Slider
-                      value={[grams]}
-                      onValueChange={(v) => setGrams(v[0])}
-                      min={1}
-                      max={50}
-                      step={1}
-                      className="w-full"
-                    />
+                    <Slider value={[grams]} onValueChange={(v) => setGrams(v[0])} min={1} max={50} step={1} className="w-full" />
                     <div className="flex justify-between mt-2 font-body text-xs text-muted-foreground">
-                      <span>1g</span>
-                      <span>25g</span>
-                      <span>50g</span>
+                      <span>1g</span><span>25g</span><span>50g</span>
                     </div>
                   </div>
 
-                  {/* Price display */}
                   <div className="bg-secondary/50 rounded-sm p-4 border border-border">
                     <div className="flex items-baseline justify-between mb-1">
                       <span className="font-body text-sm text-muted-foreground">Prix total</span>
-                      <span className="font-display text-2xl font-semibold text-foreground">
-                        {formatPrice(totalPrice)}
-                      </span>
+                      <span className="font-display text-2xl font-semibold text-foreground">{formatPrice(totalPrice)}</span>
                     </div>
                     <div className="flex items-baseline justify-between">
                       <span className="font-body text-xs text-muted-foreground">Prix au gramme</span>
-                      <span className="font-body text-sm text-muted-foreground">
-                        {formatPrice(pricePerGram)}/g
-                      </span>
+                      <span className="font-body text-sm text-muted-foreground">{formatPrice(pricePerGram)}/g</span>
                     </div>
-                    {grams >= 5 && (
-                      <p className="font-body text-xs text-primary mt-2">
-                        🎉 Prix dégressif appliqué !
-                      </p>
+                    {grams >= 5 && grams % 5 === 0 && (
+                      <p className="font-body text-xs text-primary mt-2">🎉 Prix dégressif appliqué !</p>
                     )}
                   </div>
                 </div>
               ) : (
-                <p className="font-display text-2xl font-semibold text-foreground mb-6">
-                  {product.price}
-                </p>
+                <p className="font-display text-2xl font-semibold text-foreground mb-6">{product.price}</p>
               )}
 
               <button
