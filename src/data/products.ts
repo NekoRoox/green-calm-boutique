@@ -98,6 +98,7 @@ export const categories: Category[] = [
     name: "Consommables",
     slug: "consommables",
     products: [
+      { name: "Pâtes au chanvre BIO", price: "4,90 €", image: productPatesChanvre },
       { name: "Feuilles slim", price: "2,50 €", image: catConsommable },
       { name: "Filtres carton", price: "1,90 €", image: catConsommable },
       { name: "Cônes pré-roulés", price: "4,90 €", image: catConsommable },
