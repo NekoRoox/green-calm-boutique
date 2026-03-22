@@ -20,6 +20,7 @@ export interface Product {
   price: string;
   prices?: { label: string; price: string }[];
   image: string;
+  description?: string;
 }
 
 export interface Category {
