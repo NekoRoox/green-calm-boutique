@@ -20,6 +20,7 @@ export interface Product {
   price: string;
   prices?: { label: string; price: string }[];
   image: string;
+  description?: string;
 }
 
 export interface Category {
@@ -98,7 +99,7 @@ export const categories: Category[] = [
     name: "Consommables",
     slug: "consommables",
     products: [
-      { name: "Pâtes au chanvre BIO", price: "4,90 €", image: productPatesChanvre },
+      { name: "Pâtes au chanvre BIO", price: "4,90 €", image: productPatesChanvre, description: "Découvrez nos pâtes au chanvre BIO, un mélange unique de farine de chanvre et de blé ancien pour une alimentation saine et gourmande.\n\n🌱 100% Végan — Sans ingrédient d'origine animale\n⏱️ Cuisson rapide — Seulement 4 minutes\n📦 Format 250g — Idéal pour 2 à 3 portions\n🇫🇷 Fabrication artisanale française\n\nRiches en protéines végétales et en oméga-3, ces pâtes au chanvre apportent un goût subtil de noisette qui sublimera vos plats du quotidien. Parfaites avec un filet d'huile d'olive et des légumes de saison." },
       { name: "Feuilles slim", price: "2,50 €", image: catConsommable },
       { name: "Filtres carton", price: "1,90 €", image: catConsommable },
       { name: "Cônes pré-roulés", price: "4,90 €", image: catConsommable },
