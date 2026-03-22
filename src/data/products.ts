@@ -6,6 +6,7 @@ import catPlateaux from "@/assets/cat-plateaux.jpg";
 import catSommeil from "@/assets/cat-sommeil.jpg";
 import catConsommable from "@/assets/cat-consommable.jpg";
 import catBijoux from "@/assets/cat-bijoux.jpg";
+import productPatesChanvre from "@/assets/product-pates-chanvre.png";
 
 import productFlower from "@/assets/product-flower.jpg";
 import productCream from "@/assets/product-cream.jpg";
@@ -97,6 +98,7 @@ export const categories: Category[] = [
     name: "Consommables",
     slug: "consommables",
     products: [
+      { name: "Pâtes au chanvre BIO", price: "4,90 €", image: productPatesChanvre },
       { name: "Feuilles slim", price: "2,50 €", image: catConsommable },
       { name: "Filtres carton", price: "1,90 €", image: catConsommable },
       { name: "Cônes pré-roulés", price: "4,90 €", image: catConsommable },
