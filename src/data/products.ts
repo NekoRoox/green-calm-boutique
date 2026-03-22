@@ -6,6 +6,7 @@ import catPlateaux from "@/assets/cat-plateaux.jpg";
 import catSommeil from "@/assets/cat-sommeil.jpg";
 import catConsommable from "@/assets/cat-consommable.jpg";
 import catBijoux from "@/assets/cat-bijoux.jpg";
+import productPatesChanvre from "@/assets/product-pates-chanvre.png";
 
 import productFlower from "@/assets/product-flower.jpg";
 import productCream from "@/assets/product-cream.jpg";
