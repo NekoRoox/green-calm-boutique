@@ -149,6 +149,24 @@ const ProduitDetail = () => {
                 <p className="font-display text-2xl font-semibold text-foreground mb-6">{product.price}</p>
               )}
 
+              {product.description && (
+                <div className="mb-6 bg-secondary/30 rounded-sm p-5 border border-border">
+                  {product.description.split("\n\n").map((block, i) => (
+                    <div key={i} className={i > 0 ? "mt-3" : ""}>
+                      {block.includes("\n") ? (
+                        block.split("\n").map((line, j) => (
+                          <p key={j} className="font-body text-sm text-muted-foreground leading-relaxed">
+                            {line}
+                          </p>
+                        ))
+                      ) : (
+                        <p className="font-body text-sm text-foreground/80 leading-relaxed">{block}</p>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+
               <button
                 onClick={handleAddToCart}
                 className="w-full md:w-auto px-8 py-3 bg-primary text-primary-foreground font-body text-sm font-medium tracking-wide rounded-sm hover:bg-primary/90 transition-colors duration-200"
