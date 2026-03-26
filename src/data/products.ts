@@ -14,6 +14,7 @@ import productOil from "@/assets/product-oil.jpg";
 import productInfusion from "@/assets/product-infusion.jpg";
 import productAmnesia from "@/assets/product-amnesia.jpg";
 import productWhiteWidow from "@/assets/product-whitewidow.jpg";
+import productSuperLemonHaze from "@/assets/product-superlemonhaze.jpg";
 
 export interface Product {
   name: string;
