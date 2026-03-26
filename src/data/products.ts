@@ -14,6 +14,7 @@ import productOil from "@/assets/product-oil.jpg";
 import productInfusion from "@/assets/product-infusion.jpg";
 import productAmnesia from "@/assets/product-amnesia.jpg";
 import productWhiteWidow from "@/assets/product-whitewidow.jpg";
+import productSuperLemonHaze from "@/assets/product-superlemonhaze.jpg";
 
 export interface Product {
   name: string;
@@ -36,6 +37,7 @@ export const categories: Category[] = [
     products: [
       { name: "Amnésia Molécule", price: "10 €/g", prices: [{ label: "1g", price: "10 €" }, { label: "5g", price: "35 €" }, { label: "10g", price: "55 €" }], image: productAmnesia },
       { name: "White Widow", price: "10 €/g", prices: [{ label: "1g", price: "10 €" }, { label: "5g", price: "35 €" }, { label: "10g", price: "55 €" }], image: productWhiteWidow },
+      { name: "Super Lemon Haze", price: "8 €/g", prices: [{ label: "1g", price: "8 €" }, { label: "5g", price: "30 €" }, { label: "10g", price: "50 €" }], image: productSuperLemonHaze },
       { name: "Lemon Haze", price: "11,90 €", image: productFlower },
       { name: "OG Kush CBD", price: "13,50 €", image: catFleurs },
       { name: "Strawberry", price: "14,90 €", image: productFlower },
