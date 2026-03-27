@@ -25,12 +25,12 @@ const Navbar = () => {
         <ul className="hidden md:flex items-center gap-8 font-body text-sm tracking-wide">
           {navItems.map((item) => (
             <li key={item.label}>
-              <Link
-                to={item.href}
+              <a
+                href={item.href}
                 className="text-muted-foreground hover:text-foreground transition-colors duration-200"
               >
                 {item.label}
-              </Link>
+              </a>
             </li>
           ))}
         </ul>
@@ -64,13 +64,13 @@ const Navbar = () => {
           <ul className="flex flex-col items-center gap-4 py-6 font-body text-sm">
             {navItems.map((item) => (
               <li key={item.label}>
-                <Link
-                  to={item.href}
+                <a
+                  href={item.href}
                   className="text-muted-foreground hover:text-foreground transition-colors"
                   onClick={() => setMobileOpen(false)}
                 >
                   {item.label}
-                </Link>
+                </a>
               </li>
             ))}
           </ul>
