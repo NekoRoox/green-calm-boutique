@@ -16,6 +16,7 @@ import productAmnesia from "@/assets/product-amnesia.jpg";
 import productWhiteWidow from "@/assets/product-whitewidow.jpg";
 import productSuperLemonHaze from "@/assets/product-superlemonhaze.jpg";
 import productCritical from "@/assets/product-critical.jpg";
+import productGorillaGlue from "@/assets/product-gorillaglue.jpg";
 
 export interface Product {
   name: string;
