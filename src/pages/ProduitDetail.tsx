@@ -8,12 +8,18 @@ import { Slider } from "@/components/ui/slider";
 import { useCart } from "@/contexts/CartContext";
 import { toast } from "sonner";
 
-const calculateFlowerPrice = (grams: number): number => {
+const calculateFlowerPrice = (grams: number, product: { price: string; prices?: { label: string; price: string }[] }): number => {
   if (grams <= 0) return 0;
-  if (grams % 5 !== 0) return grams * 10;
+  const basePerGram = parsePrice(product.price.replace("/g", ""));
+  const price10 = product.prices?.find(p => p.label === "10g");
+  const price5 = product.prices?.find(p => p.label === "5g");
+  const pack10Price = price10 ? parsePrice(price10.price) : basePerGram * 10;
+  const pack5Price = price5 ? parsePrice(price5.price) : basePerGram * 5;
+
+  if (grams % 5 !== 0) return grams * basePerGram;
   const packs10 = Math.floor(grams / 10);
   const packs5 = (grams % 10) === 5 ? 1 : 0;
-  return packs10 * 55 + packs5 * 35;
+  return packs10 * pack10Price + packs5 * pack5Price;
 };
 
 const formatPrice = (price: number): string => {
@@ -53,7 +59,7 @@ const ProduitDetail = () => {
     );
   }
 
-  const totalPrice = isFlower ? calculateFlowerPrice(grams) : parsePrice(product.price);
+  const totalPrice = isFlower ? calculateFlowerPrice(grams, product) : parsePrice(product.price);
   const pricePerGram = grams > 0 ? (isFlower ? totalPrice / grams : 0) : 0;
 
   const handleAddToCart = () => {
