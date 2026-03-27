@@ -59,7 +59,7 @@ const ProduitDetail = () => {
     );
   }
 
-  const totalPrice = isFlower ? calculateFlowerPrice(grams) : parsePrice(product.price);
+  const totalPrice = isFlower ? calculateFlowerPrice(grams, product) : parsePrice(product.price);
   const pricePerGram = grams > 0 ? (isFlower ? totalPrice / grams : 0) : 0;
 
   const handleAddToCart = () => {
