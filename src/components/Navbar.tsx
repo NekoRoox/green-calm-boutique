@@ -5,9 +5,9 @@ import logo from "@/assets/logo.png";
 import { useCart } from "@/contexts/CartContext";
 
 const navItems = [
-  { label: "Accueil", href: "/" },
-  { label: "Produits", href: "/produits" },
-  { label: "Nous contacter", href: "/contact" },
+  { label: "Accueil", href: "#top" },
+  { label: "Produits", href: "#produits" },
+  { label: "Nous contacter", href: "#contact" },
 ];
 
 const Navbar = () => {
