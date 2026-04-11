@@ -205,13 +205,13 @@ export const categories: Category[] = [
       {
         name: "Crème Revitalisante Asabio",
         price: "18,90 €",
-        image: "https://www.asabio-cosmetics.com/cdn/shop/files/Softness-Creme-Visage.jpg?v=1720441834",
+        image: new URL("@/assets/product-creme-revitalisante.png", import.meta.url).href,
         description: "Crème revitalisante et hydratante par Asabio Softness. 140mg de CBD et Citron de Sicile bio en 45ml. Protège et illumine la peau.",
       },
       {
         name: "Baume Régénérant Asabio",
         price: "24,00 €",
-        image: "https://www.asabio-cosmetics.com/cdn/shop/products/ASABIO-Baume-CBD-Regenerant-Calmant-50ml.jpg?v=1679928400",
+        image: new URL("@/assets/product-baume-regenerant.png", import.meta.url).href,
         description: "Baume régénérant et calmant Asabio CBD. 500mg de CBD et fleur de Calendula pour réparer, apaiser et régénérer la peau.",
       },
       {
