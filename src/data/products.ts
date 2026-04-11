@@ -2,6 +2,8 @@ import productCremeRevitalisante from "@/assets/product-creme-revitalisante.png"
 import productBaumeRegenerant from "@/assets/product-baume-regenerant.png";
 import productAbsolueCbde from "@/assets/product-absolue-cbde.png";
 import productBroadSpectrum40 from "@/assets/product-broad-spectrum-40.png";
+import productChanvonCbde from "@/assets/product-chanvon-cbde.png";
+import productFullSpectrum40 from "@/assets/product-full-spectrum-40.png";
 
 export interface Product {
   name: string;
@@ -130,6 +132,12 @@ export const categories: Category[] = [
         description: "Huile de CBD Full Spectrum 30% M2J. Très haute concentration pour utilisateurs expérimentés. Extraction premium, effet d'entourage complet. Chanvre bio cultivé en France.",
       },
       {
+        name: "Huile Full Spectrum 40%",
+        price: "65,00 €",
+        image: productFullSpectrum40,
+        description: "Huile de CBD Full Spectrum 40% M2J. Concentration maximale de la gamme Full Spectrum. Effet d'entourage complet, extraction CO2 supercritique. Chanvre bio français.",
+      },
+      {
         name: "Huile Broad Spectrum 10%",
         price: "22,00 €",
         image: "https://m2j.fr/280-large_default/huile-de-cbd-10-broad-spectrum-m2j.jpg",
@@ -246,7 +254,7 @@ export const categories: Category[] = [
       {
         name: "Le Chanvon cbdé",
         price: "7,90 €",
-        image: "https://cbde.co/cdn/shop/products/savon-chanvre-bio-cbde.jpg?v=1679584800",
+        image: productChanvonCbde,
         description: "Le Chanvon par cbdé — Savon artisanal à l'huile de chanvre bio. Visage et corps, sans produits chimiques. Hydrate et nourrit en douceur.",
       },
     ],
