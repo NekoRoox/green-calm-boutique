@@ -163,11 +163,14 @@ const Index = () => {
         <section id="produits" className="py-20 lg:py-28 bg-background">
           <div className="text-center mb-14">
             <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mb-3">
-              Catalogue
+              Découvrir
             </p>
             <h2 className="font-display text-3xl md:text-4xl font-medium text-foreground">
-              Nos produits
+              Nos Produits CBD
             </h2>
+            <p className="font-body text-sm text-muted-foreground mt-3 max-w-xl mx-auto">
+              Fleurs, huiles, cosmétiques, tisanes et accessoires soigneusement sélectionnés
+            </p>
           </div>
           {categories.map((cat) => (
             <CategoryRow key={cat.slug} category={cat} />
