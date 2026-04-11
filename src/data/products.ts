@@ -1,5 +1,7 @@
 import productCremeRevitalisante from "@/assets/product-creme-revitalisante.png";
 import productBaumeRegenerant from "@/assets/product-baume-regenerant.png";
+import productAbsolueCbde from "@/assets/product-absolue-cbde.png";
+import productBroadSpectrum40 from "@/assets/product-broad-spectrum-40.png";
 
 export interface Product {
   name: string;
@@ -148,7 +150,7 @@ export const categories: Category[] = [
       {
         name: "Huile Broad Spectrum 40%",
         price: "50,00 €",
-        image: "https://m2j.fr/283-large_default/huile-de-cbd-40-broad-spectrum-m2j.jpg",
+        image: productBroadSpectrum40,
         description: "Huile de CBD Broad Spectrum 40% M2J. Concentration maximale, sans THC. La plus puissante de la gamme Broad Spectrum.",
       },
     ],
@@ -220,7 +222,7 @@ export const categories: Category[] = [
       {
         name: "L'Absolue cbdé",
         price: "28,00 €",
-        image: "https://cbde.co/cdn/shop/products/absolue-beaute-huile-cbd.jpg?v=1679584800",
+        image: productAbsolueCbde,
         description: "L'Absolue par cbdé — Huile Chanvre et Jojoba Bio. Multiusage pour visage, corps, cheveux et barbe. 100% naturelle et bio, 100ml.",
       },
       {
