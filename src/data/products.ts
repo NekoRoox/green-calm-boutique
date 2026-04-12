@@ -6,6 +6,8 @@ import productChanvonCbde from "@/assets/product-chanvon-cbde.png";
 import productFullSpectrum40 from "@/assets/product-full-spectrum-40.png";
 import productCremeMains from "@/assets/product-creme-mains.png";
 import productCremeRecuperation from "@/assets/product-creme-recuperation.png";
+import productCoolingGel from "@/assets/product-cooling-gel.png";
+import productSavonOyl from "@/assets/product-savon-oyl.png";
 
 export interface Product {
   name: string;
@@ -196,7 +198,7 @@ export const categories: Category[] = [
       {
         name: "Cooling Gel CBD 500mg",
         price: "24,90 €",
-        image: "https://oyl.fr/wp-content/uploads/2022/09/cooling-gel-cbd.jpg",
+        image: productCoolingGel,
         description: "Gel refroidissant au CBD 500mg par ØYL. Soulage muscles et articulations après l'effort. Application locale, action rapide, effet froid apaisant.",
       },
       {
@@ -258,6 +260,12 @@ export const categories: Category[] = [
         price: "7,90 €",
         image: productChanvonCbde,
         description: "Le Chanvon par cbdé — Savon artisanal à l'huile de chanvre bio. Visage et corps, sans produits chimiques. Hydrate et nourrit en douceur.",
+      },
+      {
+        name: "Savon Facial ØYL",
+        price: "9,90 €",
+        image: productSavonOyl,
+        description: "Savon facial à l'huile de chanvre par ØYL. 70g. Calm & Regenerate pour peaux sensibles. Formule douce enrichie en Hemp Seed Oil.",
       },
     ],
   },
