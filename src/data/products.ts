@@ -4,6 +4,8 @@ import productAbsolueCbde from "@/assets/product-absolue-cbde.png";
 import productBroadSpectrum40 from "@/assets/product-broad-spectrum-40.png";
 import productChanvonCbde from "@/assets/product-chanvon-cbde.png";
 import productFullSpectrum40 from "@/assets/product-full-spectrum-40.png";
+import productCremeMains from "@/assets/product-creme-mains.png";
+import productCremeRecuperation from "@/assets/product-creme-recuperation.png";
 
 export interface Product {
   name: string;
@@ -236,13 +238,13 @@ export const categories: Category[] = [
       {
         name: "Crème Mains Asabio",
         price: "12,50 €",
-        image: "https://www.asabio-cosmetics.com/cdn/shop/products/ASABIO-Creme-Main-CBD-Reparatrice-50ml.jpg?v=1679928400",
+        image: productCremeMains,
         description: "Crème réparatrice main et ongles Asabio Wellness. 60mg de CBD et beurre de karité pour une hydratation intense. 50ml.",
       },
       {
         name: "Crème Récupération Asabio",
         price: "16,90 €",
-        image: "https://www.asabio-cosmetics.com/cdn/shop/products/ASABIO-Creme-CBD-Recuperation-Corporelle-30ml.jpg?v=1679928400",
+        image: productCremeRecuperation,
         description: "Crème récupération corporelle Asabio Wellness. 480mg de CBD et Arnica Montana pour les muscles après l'effort. 30ml.",
       },
       {
