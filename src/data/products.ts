@@ -4,6 +4,8 @@ import productAbsolueCbde from "@/assets/product-absolue-cbde.png";
 import productBroadSpectrum40 from "@/assets/product-broad-spectrum-40.png";
 import productChanvonCbde from "@/assets/product-chanvon-cbde.png";
 import productFullSpectrum40 from "@/assets/product-full-spectrum-40.png";
+import productCremeMains from "@/assets/product-creme-mains.png";
+import productCremeRecuperation from "@/assets/product-creme-recuperation.png";
 
 export interface Product {
   name: string;
