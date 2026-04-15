@@ -50,7 +50,7 @@ const ProduitDetail = () => {
         <Navbar />
         <main className="pt-16 flex flex-col items-center justify-center min-h-[60vh]">
           <p className="font-display text-2xl text-foreground mb-4">Produit introuvable</p>
-          <Link to="/produits" className="text-primary hover:underline font-body text-sm">
+          <Link to="/#produits" className="text-primary hover:underline font-body text-sm">
             ← Retour aux produits
           </Link>
         </main>
@@ -86,7 +86,7 @@ const ProduitDetail = () => {
       <main className="pt-16">
         <div className="container mx-auto px-4 py-6">
           <Link
-            to="/produits"
+            to="/#produits"
             className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground font-body text-sm transition-colors"
           >
             <ArrowLeft className="h-4 w-4" />
