@@ -12,6 +12,8 @@ import productCremeRecuperation from "@/assets/product-creme-recuperation.png";
 import productCoolingGel from "@/assets/product-cooling-gel.png";
 import productSavonOyl from "@/assets/product-savon-oyl.png";
 import productSelBainOyl from "@/assets/product-sel-bain-oyl.png";
+import productCremeDoubleAction from "@/assets/product-creme-double-action.png";
+import productBougieMassage from "@/assets/product-bougie-massage.png";
 
 export interface Product {
   name: string;
@@ -208,7 +210,7 @@ export const categories: Category[] = [
       {
         name: "Bougie Massage CBD 2500mg",
         price: "19,90 €",
-        image: "https://oyl.fr/wp-content/uploads/2022/09/bougie-massage-cbd.jpg",
+        image: productBougieMassage,
         description: "Bougie de massage au CBD 2500mg par ØYL. Fond en huile chaude pour un massage relaxant. Riche en CBD pour une détente profonde et une peau nourrie.",
       },
       {
@@ -256,7 +258,7 @@ export const categories: Category[] = [
       {
         name: "Crème Double Action Asabio",
         price: "19,90 €",
-        image: "https://www.asabio-cosmetics.com/cdn/shop/products/ASABIO-Creme-CBD-Double-Action-50ml.jpg?v=1679928400",
+        image: productCremeDoubleAction,
         description: "Crème double action épiderme et rougeurs Asabio. 110mg de CBD et Aloe Vera pour peaux sèches et sensibles. 50ml.",
       },
       {
