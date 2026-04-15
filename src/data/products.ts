@@ -136,7 +136,7 @@ export const categories: Category[] = [
       {
         name: "Huile Full Spectrum 30%",
         price: "55,00 €",
-        image: "https://m2j.fr/163-large_default/huile-de-cbd-30-full-spectrum.jpg",
+        image: productFullSpectrum30,
         description: "Huile de CBD Full Spectrum 30% M2J. Très haute concentration pour utilisateurs expérimentés. Extraction premium, effet d'entourage complet. Chanvre bio cultivé en France.",
       },
       {
@@ -214,7 +214,7 @@ export const categories: Category[] = [
       {
         name: "Sel de Bain CBD 2000mg",
         price: "14,90 €",
-        image: "https://oyl.fr/wp-content/uploads/2022/09/sel-bain-cbd.jpg",
+        image: productSelBainOyl,
         description: "Sel de bain CBD Extract par ØYL. 2000mg de fleurs CBD pour 100g. Formule enrichie aux minéraux et extraits de chanvre pour un bain apaisant et régénérant.",
       },
       {
