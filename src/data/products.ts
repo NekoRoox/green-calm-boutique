@@ -5,11 +5,13 @@ import productBroadSpectrum40 from "@/assets/product-broad-spectrum-40.png";
 import productChanvonCbde from "@/assets/product-chanvon-cbde.png";
 import productFullSpectrum40 from "@/assets/product-full-spectrum-40.png";
 import productFullSpectrum10 from "@/assets/product-full-spectrum-10.png";
+import productFullSpectrum30 from "@/assets/product-full-spectrum-30.png";
 import productBroadSpectrum20 from "@/assets/product-broad-spectrum-20.png";
 import productCremeMains from "@/assets/product-creme-mains.png";
 import productCremeRecuperation from "@/assets/product-creme-recuperation.png";
 import productCoolingGel from "@/assets/product-cooling-gel.png";
 import productSavonOyl from "@/assets/product-savon-oyl.png";
+import productSelBainOyl from "@/assets/product-sel-bain-oyl.png";
 
 export interface Product {
   name: string;
