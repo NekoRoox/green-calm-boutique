@@ -122,7 +122,7 @@ export const categories: Category[] = [
       {
         name: "Huile Full Spectrum 10%",
         price: "25,00 €",
-        image: "https://m2j.fr/161-large_default/huile-de-cbd-10-full-spectrum.jpg",
+        image: productFullSpectrum10,
         description: "Huile de CBD Full Spectrum 10% M2J. Concentration intermédiaire, équilibrée. Profitez de l'effet d'entourage complet avec cannabinoïdes et terpènes. Extraction premium, 100% naturelle.",
       },
       {
@@ -152,7 +152,7 @@ export const categories: Category[] = [
       {
         name: "Huile Broad Spectrum 20%",
         price: "35,00 €",
-        image: "https://m2j.fr/281-large_default/huile-de-cbd-20-broad-spectrum-m2j.jpg",
+        image: productBroadSpectrum20,
         description: "Huile de CBD Broad Spectrum 20% M2J. Concentration intermédiaire, sans THC détectable. Profitez des bienfaits du chanvre en toute sérénité.",
       },
       {
