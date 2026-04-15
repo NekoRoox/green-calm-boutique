@@ -5,11 +5,13 @@ import productBroadSpectrum40 from "@/assets/product-broad-spectrum-40.png";
 import productChanvonCbde from "@/assets/product-chanvon-cbde.png";
 import productFullSpectrum40 from "@/assets/product-full-spectrum-40.png";
 import productFullSpectrum10 from "@/assets/product-full-spectrum-10.png";
+import productFullSpectrum30 from "@/assets/product-full-spectrum-30.png";
 import productBroadSpectrum20 from "@/assets/product-broad-spectrum-20.png";
 import productCremeMains from "@/assets/product-creme-mains.png";
 import productCremeRecuperation from "@/assets/product-creme-recuperation.png";
 import productCoolingGel from "@/assets/product-cooling-gel.png";
 import productSavonOyl from "@/assets/product-savon-oyl.png";
+import productSelBainOyl from "@/assets/product-sel-bain-oyl.png";
 
 export interface Product {
   name: string;
@@ -134,7 +136,7 @@ export const categories: Category[] = [
       {
         name: "Huile Full Spectrum 30%",
         price: "55,00 €",
-        image: "https://m2j.fr/163-large_default/huile-de-cbd-30-full-spectrum.jpg",
+        image: productFullSpectrum30,
         description: "Huile de CBD Full Spectrum 30% M2J. Très haute concentration pour utilisateurs expérimentés. Extraction premium, effet d'entourage complet. Chanvre bio cultivé en France.",
       },
       {
@@ -212,7 +214,7 @@ export const categories: Category[] = [
       {
         name: "Sel de Bain CBD 2000mg",
         price: "14,90 €",
-        image: "https://oyl.fr/wp-content/uploads/2022/09/sel-bain-cbd.jpg",
+        image: productSelBainOyl,
         description: "Sel de bain CBD Extract par ØYL. 2000mg de fleurs CBD pour 100g. Formule enrichie aux minéraux et extraits de chanvre pour un bain apaisant et régénérant.",
       },
       {
